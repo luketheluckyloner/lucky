@@ -137,6 +137,7 @@ volatile int tftHeight = VECTOR_DISPLAY_DEFAULT_WIDTH;
 #include "core/serialcmds.h"
 #include "core/settings.h"
 #include "core/wifi/wifi_common.h"
+#include "modules/usb_host_keyboard.h"
 #include "modules/bjs_interpreter/interpreter.h" // for JavaScript interpreter
 #include "modules/others/audio.h"                // for playAudioFile
 #include "modules/rf/rf_utils.h"                 // for initCC1101once
@@ -442,6 +443,8 @@ void setup() {
 
     //  start a task to handle serial commands while the webui is running
     startSerialCommandsHandlerTask();
+
+    initUsbHostKeyboard();
 
     wakeUpScreen();
 
