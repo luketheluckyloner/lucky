@@ -786,7 +786,7 @@ String generalKeyboard(
                     redraw = true;
                 }
             }
-#elif defined(HAS_KEYBOARD)  // Cardputer, T-Deck and T-LoRa-Pager
+#elif defined(HAS_KEYBOARD) || defined(USB_HOST_KEYBOARD)  // Cardputer, T-Deck, T-LoRa-Pager or USB host
             if (KeyStroke.pressed) {
                 wakeUpScreen();
                 tft.setCursor(cursor_x, cursor_y);
